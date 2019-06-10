@@ -1,0 +1,14 @@
+{
+    "name": "ValidationTransporter",
+    "alias": "validationtransporter",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\ValidationTransporter\\Providers\\ValidationTransporterServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
