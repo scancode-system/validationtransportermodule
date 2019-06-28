@@ -2,11 +2,10 @@
 
 namespace Modules\ValidationTransporter\Validator;
 
-use App\Imports\ValidatorImport;
+use Modules\Portal\Imports\ValidatorImport;
 
 class TransporterValidator extends ValidatorImport
 {
-
 
 	public function rule($data){
 		return [
