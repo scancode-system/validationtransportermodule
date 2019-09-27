@@ -3,6 +3,7 @@
 namespace Modules\ValidationTransporter\Validator;
 
 use Modules\Portal\Imports\ValidatorImport;
+use Modules\Portal\Rules\NotInCustomRule;
 
 class TransporterValidator extends ValidatorImport
 {
@@ -11,9 +12,12 @@ class TransporterValidator extends ValidatorImport
 
 	public function rule($data){
 		return [
-			'codigo' 		=>	'filled|integer|min:1|unique_custom_values:codigo',
-			'descricao' 	=>	'filled|string|max:255|unique_custom_values:descricao'
+			'codigo' 		=>	['filled', 'integer', 'min:1',  new NotInCustomRule($this->chunkColumn('codigo', 0, $this->row_index-2), 'Duplicado')],
+			'descricao' 	=>	['filled', 'string', 'max:255',  new NotInCustomRule($this->chunkColumn('descricao', 0, $this->row_index-2), 'Duplicado')]
 		];
+	}
+	public function messages(){
+		return  [];
 	}
 
 }
