@@ -9,7 +9,7 @@ class TransporterValidator extends ValidatorImport
 {
 
 	protected $required = ['codigo', 'descricao'];
-
+ 
 	public function rule($data){
 		return [
 			'codigo' 		=>	['filled', 'integer', 'min:1',  new NotInCustomRule($this->chunkColumn('codigo', 0, $this->row_index-2), 'Duplicado')],
