@@ -18,7 +18,7 @@ class InsertValidationTransporter extends Migration
                 'alias' => 'transportadora',
                 'module_name' => 'ValidationTransporter',
                 'module_alias' => 'validationtransporter',
-                'video' => 'https://www.youtube.com/watch?v=sd5Rd4LRGgs&t=34s',
+                'video' => 'https://www.youtube.com/embed/zpOULjyy-n8?rel=0',
                 'file' => 'transportadora.xlsx',
                 'validation' => 'transporter', 
         ]);
