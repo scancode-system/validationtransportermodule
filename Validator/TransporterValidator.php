@@ -8,7 +8,17 @@ use Modules\Portal\Rules\NotInCustomRule;
 class TransporterValidator extends ValidatorImport
 {
 
-	protected $required = ['codigo', 'descricao'];
+	protected $required = ['id', 'name'];
+
+
+	public function rule($data){
+		return [
+			'id' =>	['integer', 'min:1', new NotInCustomRule($this->chunkColumn('id', 0, $this->row_index-2), 'Duplicado')],
+			'name' => ['filled', 'string', 'max:255',  new NotInCustomRule($this->chunkColumn('name', 0, $this->row_index-2), 'Duplicado')]
+		];
+	}
+
+	/*protected $required = ['codigo', 'descricao'];
  
 	public function rule($data){
 		return [
@@ -18,6 +28,6 @@ class TransporterValidator extends ValidatorImport
 	}
 	public function messages(){
 		return  [];
-	}
+	}*/
 
 }
