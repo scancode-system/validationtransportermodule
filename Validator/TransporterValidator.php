@@ -18,6 +18,10 @@ class TransporterValidator extends ValidatorImport
 		];
 	}
 
+
+	public function messages(){
+		return  [];
+	}
 	/*protected $required = ['codigo', 'descricao'];
  
 	public function rule($data){
